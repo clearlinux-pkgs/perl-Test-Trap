@@ -4,10 +4,10 @@
 #
 Name     : perl-Test-Trap
 Version  : 0.3.4
-Release  : 10
+Release  : 11
 URL      : https://cpan.metacpan.org/authors/id/E/EB/EBHANSSEN/Test-Trap-v0.3.4.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EB/EBHANSSEN/Test-Trap-v0.3.4.tar.gz
-Summary  : 'Trap exit codes, exceptions, output, etc.'
+Summary  : Trap exit codes, exceptions, output, etc.
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
 BuildRequires : buildreq-cpan
@@ -24,6 +24,7 @@ return values from boxed blocks of test code.
 Summary: dev components for the perl-Test-Trap package.
 Group: Development
 Provides: perl-Test-Trap-devel = %{version}-%{release}
+Requires: perl-Test-Trap = %{version}-%{release}
 
 %description dev
 dev components for the perl-Test-Trap package.
