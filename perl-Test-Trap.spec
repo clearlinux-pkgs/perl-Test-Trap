@@ -4,12 +4,13 @@
 #
 Name     : perl-Test-Trap
 Version  : 0.3.4
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/E/EB/EBHANSSEN/Test-Trap-v0.3.4.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EB/EBHANSSEN/Test-Trap-v0.3.4.tar.gz
-Summary  : Trap exit codes, exceptions, output, etc.
+Summary  : 'Trap exit codes, exceptions, output, etc.'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
+Requires: perl-Test-Trap-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Data::Dump)
 
@@ -30,14 +31,24 @@ Requires: perl-Test-Trap = %{version}-%{release}
 dev components for the perl-Test-Trap package.
 
 
+%package perl
+Summary: perl components for the perl-Test-Trap package.
+Group: Default
+Requires: perl-Test-Trap = %{version}-%{release}
+
+%description perl
+perl components for the perl-Test-Trap package.
+
+
 %prep
 %setup -q -n Test-Trap-v0.3.4
+cd %{_builddir}/Test-Trap-v0.3.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
+export LANG=C.UTF-8
 if test -f Makefile.PL; then
 %{__perl} Makefile.PL
 make  %{?_smp_mflags}
@@ -47,7 +58,7 @@ else
 fi
 
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
@@ -67,11 +78,6 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Trap.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Trap/Builder.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Trap/Builder/PerlIO.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Trap/Builder/SystemSafe.pm
-/usr/lib/perl5/vendor_perl/5.28.2/Test/Trap/Builder/TempFile.pm
 
 %files dev
 %defattr(-,root,root,-)
@@ -80,3 +86,11 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 /usr/share/man/man3/Test::Trap::Builder::PerlIO.3
 /usr/share/man/man3/Test::Trap::Builder::SystemSafe.3
 /usr/share/man/man3/Test::Trap::Builder::TempFile.3
+
+%files perl
+%defattr(-,root,root,-)
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Trap.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Trap/Builder.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Trap/Builder/PerlIO.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Trap/Builder/SystemSafe.pm
+/usr/lib/perl5/vendor_perl/5.30.1/Test/Trap/Builder/TempFile.pm
