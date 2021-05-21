@@ -89,8 +89,8 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.32.1/Test/Trap.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Test/Trap/Builder.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Test/Trap/Builder/PerlIO.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Test/Trap/Builder/SystemSafe.pm
-/usr/lib/perl5/vendor_perl/5.32.1/Test/Trap/Builder/TempFile.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Test/Trap.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Test/Trap/Builder.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Test/Trap/Builder/PerlIO.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Test/Trap/Builder/SystemSafe.pm
+/usr/lib/perl5/vendor_perl/5.34.0/Test/Trap/Builder/TempFile.pm
