@@ -4,7 +4,7 @@
 #
 Name     : perl-Test-Trap
 Version  : 0.3.4
-Release  : 23
+Release  : 24
 URL      : https://cpan.metacpan.org/authors/id/E/EB/EBHANSSEN/Test-Trap-v0.3.4.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EB/EBHANSSEN/Test-Trap-v0.3.4.tar.gz
 Summary  : 'Trap exit codes, exceptions, output, etc.'
@@ -89,8 +89,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.34.0/Test/Trap.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Test/Trap/Builder.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Test/Trap/Builder/PerlIO.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Test/Trap/Builder/SystemSafe.pm
-/usr/lib/perl5/vendor_perl/5.34.0/Test/Trap/Builder/TempFile.pm
+/usr/lib/perl5/*
