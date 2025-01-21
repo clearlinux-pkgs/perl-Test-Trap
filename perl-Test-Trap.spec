@@ -5,7 +5,7 @@
 #
 Name     : perl-Test-Trap
 Version  : 0.3.5
-Release  : 30
+Release  : 31
 URL      : https://cpan.metacpan.org/authors/id/E/EB/EBHANSSEN/Test-Trap-v0.3.5.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/E/EB/EBHANSSEN/Test-Trap-v0.3.5.tar.gz
 Summary  : 'Trap exit codes, exceptions, output, etc.'
